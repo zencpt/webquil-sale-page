@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, FormEvent } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   ArrowRight, 
@@ -18,7 +18,8 @@ import {
   TrendingUp,
   PenTool,
   Clock,
-  ArrowUpRight
+  ArrowUpRight,
+  Lock
 } from 'lucide-react';
 
 export default function App() {
@@ -36,7 +37,7 @@ export default function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     setIsSubmitted(true);
     setTimeout(() => setIsSubmitted(false), 5000);
@@ -69,9 +70,10 @@ export default function App() {
           <a href="#contact" className="hidden sm:block text-sm font-bold hover:text-white/70 transition-colors">Make Offer</a>
           <a 
             href="#contact" 
-            className="bg-white text-black px-6 py-3 rounded-full text-sm font-bold hover:scale-105 active:scale-95 transition-all shadow-xl shadow-white/10"
+            className="relative group bg-white text-black px-7 py-3.5 rounded-full text-sm font-bold hover:scale-105 active:scale-95 transition-all shadow-[0_0_20px_rgba(255,255,255,0.15)] hover:shadow-[0_0_30px_rgba(255,255,255,0.3)]"
           >
-            Acquire Now
+            <span className="relative z-10">Acquire Now</span>
+            <div className="absolute inset-0 rounded-full bg-white blur-md opacity-0 group-hover:opacity-20 transition-opacity" />
           </a>
         </div>
       </nav>
@@ -98,8 +100,8 @@ export default function App() {
               transition={{ duration: 1, ease: [0.21, 0.47, 0.32, 0.98] }}
               className="font-display text-7xl md:text-9xl font-bold tracking-tighter mb-10 leading-[0.85]"
             >
-              Stop searching. <br />
-              <span className="text-gradient">Start building.</span>
+              Own the Name. <br />
+              <span className="text-gradient">Define the Brand.</span>
             </motion.h1>
 
             <motion.p 
@@ -115,28 +117,52 @@ export default function App() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="flex flex-col sm:flex-row items-start sm:items-center gap-8 mb-20"
+              className="flex flex-col lg:flex-row items-start lg:items-center gap-10 mb-20"
             >
-              <div className="flex gap-4">
+              <div className="flex flex-wrap gap-4">
                 <button 
                   onClick={() => window.location.href = '#contact'}
-                  className="group bg-white text-black px-10 py-5 rounded-2xl font-bold text-xl hover:scale-105 active:scale-95 transition-all flex items-center gap-3 shadow-2xl shadow-white/10"
+                  className="relative group bg-white text-black px-12 py-6 rounded-2xl font-bold text-2xl hover:scale-105 active:scale-95 transition-all flex items-center gap-3 shadow-[0_0_40px_rgba(255,255,255,0.1)] hover:shadow-[0_0_60px_rgba(255,255,255,0.25)]"
                 >
-                  Secure the Domain <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                  <span className="relative z-10 flex items-center gap-3">
+                    Secure the Domain <ArrowRight className="w-7 h-7 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                  <div className="absolute inset-0 rounded-2xl bg-white blur-xl opacity-0 group-hover:opacity-30 transition-opacity" />
                 </button>
                 <button 
                   onClick={() => window.location.href = '#contact'}
-                  className="bg-white/5 border border-white/10 px-10 py-5 rounded-2xl font-bold text-xl hover:bg-white/10 transition-all backdrop-blur-md"
+                  className="bg-white/5 border border-white/10 px-10 py-6 rounded-2xl font-bold text-xl hover:bg-white/10 transition-all backdrop-blur-md"
                 >
                   Make an Offer
                 </button>
               </div>
+
+              <div className="flex flex-wrap items-center gap-x-8 gap-y-4">
+                <div className="flex items-center gap-2 text-white/40">
+                  <ShieldCheck className="w-4 h-4 text-brand-accent" />
+                  <span className="text-[10px] font-bold uppercase tracking-widest">Escrow Protected</span>
+                </div>
+                <div className="flex items-center gap-2 text-white/40">
+                  <Zap className="w-4 h-4 text-brand-accent" />
+                  <span className="text-[10px] font-bold uppercase tracking-widest">Instant Transfer</span>
+                </div>
+                <div className="flex items-center gap-2 text-white/40">
+                  <Lock className="w-4 h-4 text-brand-accent" />
+                  <span className="text-[10px] font-bold uppercase tracking-widest">Secure Checkout</span>
+                </div>
+              </div>
               
-              <div className="flex flex-col">
-                <span className="text-[10px] uppercase tracking-[0.3em] text-white/30 mb-1 font-bold">Investment Value</span>
-                <div className="flex items-baseline gap-2">
-                  <span className="text-5xl font-display font-bold">$695</span>
-                  <span className="text-white/30 text-sm line-through">$1,250</span>
+              <div className="relative group">
+                <div className="absolute -inset-4 bg-brand-accent/10 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="relative flex flex-col">
+                  <span className="text-[10px] uppercase tracking-[0.4em] text-brand-accent mb-2 font-bold">Acquisition Value</span>
+                  <div className="flex items-center gap-5">
+                    <span className="text-6xl md:text-7xl font-display font-bold text-white tracking-tighter">$695</span>
+                    <div className="flex flex-col -space-y-1">
+                      <span className="text-white/20 text-lg line-through decoration-brand-accent/40">$1,250</span>
+                      <span className="text-[10px] font-black text-green-500 uppercase tracking-widest">Save 45%</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -146,16 +172,61 @@ export default function App() {
         {/* Floating Abstract Element */}
         <motion.div 
           initial={{ opacity: 0, rotate: -10, scale: 0.8 }}
-          animate={{ opacity: 1, rotate: 0, scale: 1 }}
-          transition={{ duration: 1.5, delay: 0.5 }}
-          className="absolute right-[-5%] top-[20%] w-[40%] aspect-square glass-card hidden lg:flex items-center justify-center rotate-3 border-white/5"
+          animate={{ 
+            opacity: 1, 
+            rotate: 0, 
+            scale: 1,
+            y: [0, -20, 0],
+            rotateZ: [0, 2, 0]
+          }}
+          whileHover={{ 
+            scale: 1.05, 
+            rotateY: 15, 
+            rotateX: 5,
+            transition: { duration: 0.4 }
+          }}
+          transition={{ 
+            duration: 1.5, 
+            delay: 0.5,
+            y: {
+              duration: 6,
+              repeat: Infinity,
+              ease: "easeInOut"
+            },
+            rotateZ: {
+              duration: 8,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }
+          }}
+          className="absolute right-[-5%] top-[20%] w-[40%] aspect-square glass-card hidden lg:flex items-center justify-center rotate-3 border-white/5 overflow-visible"
+          style={{ perspective: "1200px", transformStyle: "preserve-3d" }}
         >
-          <div className="text-center p-12">
-            <div className="font-serif italic text-8xl text-white/10 mb-4">W</div>
-            <div className="font-display text-6xl font-bold tracking-tighter mb-2">Webquil</div>
-            <div className="h-px w-24 bg-brand-accent mx-auto mb-6" />
-            <p className="text-white/40 font-serif italic text-xl">The artisan's digital legacy.</p>
+          {/* Subtle Glow Background */}
+          <div className="absolute -inset-20 bg-brand-accent/10 blur-[100px] rounded-full opacity-40 pointer-events-none animate-pulse" />
+          <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent rounded-3xl pointer-events-none" />
+          
+          <div className="text-center p-12 relative z-10" style={{ transform: "translateZ(60px)" }}>
+            <motion.div 
+              animate={{ opacity: [0.05, 0.15, 0.05], scale: [1, 1.05, 1] }}
+              transition={{ duration: 5, repeat: Infinity }}
+              className="font-serif italic text-9xl text-white/10 mb-4 select-none"
+            >
+              W
+            </motion.div>
+            <div className="font-display text-7xl font-bold tracking-tighter mb-2 text-gradient">Webquil</div>
+            <motion.div 
+              initial={{ width: 0 }}
+              animate={{ width: "6rem" }}
+              transition={{ duration: 1.2, delay: 1.5, ease: "circOut" }}
+              className="h-px bg-brand-accent mx-auto mb-6 shadow-[0_0_10px_rgba(59,130,246,0.5)]" 
+            />
+            <p className="text-white/40 font-serif italic text-2xl">The artisan's digital legacy.</p>
           </div>
+
+          {/* Decorative Corner Accents */}
+          <div className="absolute top-8 left-8 w-4 h-4 border-t border-l border-white/20" />
+          <div className="absolute bottom-8 right-8 w-4 h-4 border-b border-r border-white/20" />
         </motion.div>
       </section>
 
