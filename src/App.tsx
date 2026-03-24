@@ -258,7 +258,7 @@ export default function App() {
       </section>
 
       {/* Brand Vision Section */}
-      <section id="meaning" className="py-32 px-6 relative">
+      <section id="meaning" className="py-20 md:py-32 px-6 relative">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-12 gap-20 items-center">
             <div className="lg:col-span-7">
