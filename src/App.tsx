@@ -88,16 +88,16 @@ export default function App() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative flex flex-col justify-start pt-32 pb-12 px-6 overflow-hidden mesh-gradient">
+      <section className="relative flex flex-col justify-start pt-24 md:pt-32 pb-16 md:pb-24 px-6 overflow-hidden mesh-gradient">
         <div className="absolute inset-0 grid-pattern opacity-20" />
         
         <div className="max-w-7xl mx-auto w-full relative z-10">
-          <div className="max-w-4xl">
+          <div className="max-w-4xl text-center md:text-left flex flex-col items-center md:items-start">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-xs font-bold uppercase tracking-[0.2em] text-white/60"
+              className="inline-flex items-center gap-2 mb-6 md:mb-8 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-white/60"
             >
               <span className="w-2 h-2 bg-brand-accent rounded-full animate-pulse" />
               Exclusive Digital Asset Opportunity
@@ -107,9 +107,9 @@ export default function App() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, ease: [0.21, 0.47, 0.32, 0.98] }}
-              className="font-display text-7xl md:text-9xl font-bold tracking-tighter mb-10 leading-[0.85]"
+              className="font-display text-5xl sm:text-7xl md:text-9xl font-bold tracking-tighter mb-6 md:mb-10 leading-[1.1] md:leading-[0.85]"
             >
-              Own the Name. <br />
+              Own the Name. <br className="hidden md:block" />
               <span className="text-white md:text-gradient">
                 Define the Brand.
               </span>
@@ -119,7 +119,7 @@ export default function App() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-xl md:text-3xl text-white/50 max-w-3xl mb-14 leading-tight font-light"
+              className="text-base sm:text-xl md:text-3xl text-white/70 md:text-white/50 max-w-2xl md:max-w-3xl mb-10 md:mb-14 leading-relaxed md:leading-tight font-light mx-auto md:mx-0"
             >
               Webquil.com is the definitive brand for the next generation of digital creators. A premium, one-word fusion of heritage and high-tech.
             </motion.p>
@@ -128,27 +128,27 @@ export default function App() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="flex flex-col lg:flex-row items-start lg:items-center gap-6 md:gap-10 mb-4 md:mb-8"
+              className="flex flex-col lg:flex-row items-center gap-10 md:gap-12 mb-8"
             >
-              <div className="flex flex-wrap gap-8 items-start">
-                <div className="flex flex-col gap-5">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-6 sm:gap-8 items-center md:items-start justify-center md:justify-start w-full md:w-auto">
+                <div className="flex flex-col gap-6 items-center md:items-start w-full sm:w-auto">
                   <button 
                     onClick={() => window.location.href = '#contact'}
-                    className="relative group bg-white text-black px-12 py-6 rounded-2xl font-bold text-2xl hover:scale-105 active:scale-95 transition-all flex items-center gap-3 shadow-[0_0_40px_rgba(255,255,255,0.1)] hover:shadow-[0_0_60px_rgba(255,255,255,0.25)]"
+                    className="w-full sm:w-auto relative group bg-white text-black px-10 md:px-12 py-5 md:py-6 rounded-2xl font-bold text-lg md:text-2xl hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-3 shadow-[0_0_40px_rgba(255,255,255,0.1)] hover:shadow-[0_0_60px_rgba(255,255,255,0.25)]"
                   >
                     <span className="relative z-10 flex items-center gap-3">
-                      Secure the Domain <ArrowRight className="w-7 h-7 group-hover:translate-x-1 transition-transform" />
+                      Secure the Domain <ArrowRight className="w-6 h-6 md:w-7 md:h-7 group-hover:translate-x-1 transition-transform" />
                     </span>
                     <div className="absolute inset-0 rounded-2xl bg-white blur-xl opacity-0 group-hover:opacity-30 transition-opacity" />
                   </button>
                   
-                  <div className="flex flex-col gap-2.5 px-2">
+                  <div className="flex flex-col gap-3 px-2 items-center md:items-start">
                     {[
                       "Secure Escrow Transfer",
                       "Full Ownership Rights",
                       "One-Time Payment"
                     ].map((text) => (
-                      <div key={text} className="flex items-center gap-2.5 text-white/40 text-[10px] font-black uppercase tracking-[0.2em]">
+                      <div key={text} className="flex items-center gap-2.5 text-white/50 md:text-white/40 text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em]">
                         <CheckCircle2 className="w-3.5 h-3.5 text-green-500" />
                         {text}
                       </div>
@@ -158,21 +158,21 @@ export default function App() {
 
                 <button 
                   onClick={() => window.location.href = '#contact'}
-                  className="bg-white/5 border border-white/10 px-10 py-6 rounded-2xl font-bold text-xl hover:bg-white/10 transition-all backdrop-blur-md"
+                  className="w-full sm:w-auto bg-white/5 border border-white/10 px-10 py-5 md:py-6 rounded-2xl font-bold text-base md:text-xl hover:bg-white/10 transition-all backdrop-blur-md"
                 >
                   Make an Offer
                 </button>
               </div>
 
-              <div className="relative group">
+              <div className="relative group pt-4 md:pt-0">
                 <div className="absolute -inset-8 bg-brand-accent/20 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                <div className="relative flex flex-col">
-                  <span className="text-[10px] uppercase tracking-[0.5em] text-brand-accent mb-3 font-black">Acquisition Value</span>
+                <div className="relative flex flex-col items-center md:items-start">
+                  <span className="text-[9px] md:text-[10px] uppercase tracking-[0.5em] text-brand-accent mb-3 font-black">Acquisition Value</span>
                   <div className="flex items-center gap-6">
-                    <span className="text-7xl md:text-9xl font-display font-bold text-white tracking-tighter drop-shadow-[0_0_30px_rgba(255,255,255,0.15)]">$695</span>
+                    <span className="text-5xl sm:text-7xl md:text-9xl font-display font-bold text-white tracking-tighter drop-shadow-[0_0_30px_rgba(255,255,255,0.15)]">$695</span>
                     <div className="flex flex-col -space-y-1">
-                      <span className="text-white/20 text-xl md:text-2xl line-through decoration-brand-accent/40">$1,250</span>
-                      <span className="text-[11px] font-black text-green-500 uppercase tracking-[0.2em]">Save 45%</span>
+                      <span className="text-white/30 text-lg md:text-2xl line-through decoration-brand-accent/40">$1,250</span>
+                      <span className="text-[10px] md:text-[11px] font-black text-green-500 uppercase tracking-[0.2em]">Save 45%</span>
                     </div>
                   </div>
                 </div>
@@ -260,17 +260,17 @@ export default function App() {
       </section>
 
       {/* Brand Vision Section */}
-      <section id="meaning" className="py-20 md:py-32 px-6 relative">
+      <section id="meaning" className="py-16 md:py-32 px-6 relative">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-12 gap-20 items-center">
+          <div className="grid lg:grid-cols-12 gap-12 md:gap-20 items-center">
             <div className="lg:col-span-7">
               <motion.div {...fadeInUp}>
-                <span className="text-brand-accent font-bold tracking-[0.3em] uppercase text-xs mb-6 block">The Vision</span>
-                <h2 className="font-display text-5xl md:text-7xl font-bold mb-10 leading-[0.9] tracking-tighter">
-                  The Quill, Reimagined <br />
+                <span className="text-brand-accent font-bold tracking-[0.3em] uppercase text-[10px] md:text-xs mb-4 md:mb-6 block text-center md:text-left">The Vision</span>
+                <h2 className="font-display text-4xl sm:text-5xl md:text-7xl font-bold mb-6 md:mb-10 leading-[1.1] md:leading-[0.9] tracking-tighter text-center md:text-left">
+                  The Quill, Reimagined <br className="hidden md:block" />
                   <span className="font-serif italic font-light text-white/60">for the Digital Age.</span>
                 </h2>
-                <div className="space-y-8 text-xl md:text-2xl text-white/50 leading-relaxed font-light">
+                <div className="space-y-6 md:space-y-8 text-base md:text-2xl text-white/60 md:text-white/50 leading-relaxed font-light text-center md:text-left">
                   <p>
                     Webquil is the digital successor to the artisan's most essential tool. It bridges the gap between <span className="text-white font-medium">classic craftsmanship</span> and the cutting edge of SaaS and AI.
                   </p>
@@ -286,16 +286,16 @@ export default function App() {
             <div className="lg:col-span-5">
               <motion.div 
                 {...fadeInUp}
-                className="relative aspect-[4/5] glass-card overflow-hidden group"
+                className="relative aspect-square md:aspect-[4/5] glass-card overflow-hidden group"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-brand-accent/20 via-transparent to-purple-500/10 opacity-50" />
                 <div className="absolute inset-0 grid-pattern opacity-10" />
-                <div className="relative h-full flex flex-col items-center justify-center p-12 text-center">
-                  <div className="w-32 h-32 bg-white/5 rounded-full flex items-center justify-center mb-10 group-hover:scale-110 transition-transform duration-700">
-                    <PenTool className="w-12 h-12 text-brand-accent" />
+                <div className="relative h-full flex flex-col items-center justify-center p-8 md:p-12 text-center">
+                  <div className="w-20 h-20 md:w-32 md:h-32 bg-white/5 rounded-full flex items-center justify-center mb-6 md:mb-10 group-hover:scale-110 transition-transform duration-700">
+                    <PenTool className="w-8 h-8 md:w-12 md:h-12 text-brand-accent" />
                   </div>
-                  <div className="font-display text-5xl font-bold tracking-tighter mb-4">Webquil</div>
-                  <div className="text-white/30 tracking-[0.4em] uppercase text-[10px] font-bold">Crafting the Future</div>
+                  <div className="font-display text-4xl md:text-5xl font-bold tracking-tighter mb-4">Webquil</div>
+                  <div className="text-white/30 tracking-[0.4em] uppercase text-[8px] md:text-[10px] font-bold">Crafting the Future</div>
                 </div>
               </motion.div>
             </div>
@@ -304,15 +304,15 @@ export default function App() {
       </section>
 
       {/* Asset Value Section */}
-      <section id="why" className="py-32 px-6 bg-white/[0.01]">
+      <section id="why" className="py-16 md:py-32 px-6 bg-white/[0.01]">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+          <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-12 md:mb-20 gap-6 md:gap-8">
             <motion.div {...fadeInUp} className="max-w-2xl">
-              <span className="text-brand-accent font-bold tracking-[0.3em] uppercase text-xs mb-6 block">Asset Value</span>
-              <h2 className="font-display text-5xl md:text-6xl font-bold leading-[0.9] tracking-tighter">Why Webquil is a <br />Tier-1 Investment.</h2>
+              <span className="text-brand-accent font-bold tracking-[0.3em] uppercase text-[10px] md:text-xs mb-4 md:mb-6 block text-center md:text-left">Asset Value</span>
+              <h2 className="font-display text-4xl md:text-6xl font-bold leading-[1.1] md:leading-[0.9] tracking-tighter text-center md:text-left">Why Webquil is a <br className="hidden md:block" />Tier-1 Investment.</h2>
             </motion.div>
-            <motion.div {...fadeInUp} className="flex items-center gap-4 text-white/40 font-bold uppercase tracking-widest text-xs">
-              <TrendingUp className="w-5 h-5 text-brand-accent" />
+            <motion.div {...fadeInUp} className="flex items-center justify-center md:justify-start gap-4 text-white/40 font-bold uppercase tracking-widest text-[9px] md:text-xs">
+              <TrendingUp className="w-4 h-4 md:w-5 md:h-5 text-brand-accent" />
               Appreciating Digital Real Estate
             </motion.div>
           </div>
@@ -322,28 +322,28 @@ export default function App() {
               {
                 title: "Instant Authority",
                 desc: "A name that sounds like a billion-dollar company from day one. Skip the 'startup' phase and project enterprise-level trust.",
-                icon: <ShieldCheck className="w-8 h-8 text-blue-400" />
+                icon: <ShieldCheck className="w-7 h-7 md:w-8 md:h-8 text-blue-400" />
               },
               {
                 title: "Universal Appeal",
                 desc: "From creative agencies to AI-driven SaaS, Webquil adapts to your vision while maintaining its premium essence.",
-                icon: <Layers className="w-8 h-8 text-purple-400" />
+                icon: <Layers className="w-7 h-7 md:w-8 md:h-8 text-purple-400" />
               },
               {
                 title: "SEO Advantage",
                 desc: "Short, pronounceable, and easy to type. A high-recall name that reduces your customer acquisition costs over time.",
-                icon: <TrendingUp className="w-8 h-8 text-green-400" />
+                icon: <TrendingUp className="w-7 h-7 md:w-8 md:h-8 text-green-400" />
               }
             ].map((item, i) => (
               <motion.div 
                 key={i}
                 {...fadeInUp}
                 transition={{ delay: i * 0.1 }}
-                className="bg-brand-bg p-12 hover:bg-white/[0.02] transition-colors"
+                className="bg-brand-bg p-8 md:p-12 hover:bg-white/[0.02] transition-colors text-center md:text-left"
               >
-                <div className="mb-10">{item.icon}</div>
-                <h3 className="text-3xl font-bold mb-6 tracking-tight">{item.title}</h3>
-                <p className="text-white/50 text-lg leading-relaxed font-light">{item.desc}</p>
+                <div className="mb-8 md:mb-10 flex justify-center md:justify-start">{item.icon}</div>
+                <h3 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 tracking-tight">{item.title}</h3>
+                <p className="text-white/60 md:text-white/50 text-base md:text-lg leading-relaxed font-light">{item.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -351,14 +351,14 @@ export default function App() {
       </section>
 
       {/* Potential Section */}
-      <section id="use-cases" className="py-32 px-6">
+      <section id="use-cases" className="py-16 md:py-32 px-6">
         <div className="max-w-7xl mx-auto">
-          <motion.div {...fadeInUp} className="mb-24">
-            <span className="text-brand-accent font-bold tracking-[0.3em] uppercase text-xs mb-6 block">Potential</span>
-            <h2 className="font-display text-5xl md:text-7xl font-bold leading-[0.9] tracking-tighter">One Name. <br />Infinite Verticals.</h2>
+          <motion.div {...fadeInUp} className="mb-12 md:mb-24">
+            <span className="text-brand-accent font-bold tracking-[0.3em] uppercase text-[10px] md:text-xs mb-4 md:mb-6 block text-center md:text-left">Potential</span>
+            <h2 className="font-display text-4xl md:text-7xl font-bold leading-[1.1] md:leading-[0.9] tracking-tighter text-center md:text-left">One Name. <br className="hidden md:block" />Infinite Verticals.</h2>
           </motion.div>
 
-          <div className="grid lg:grid-cols-3 gap-16">
+          <div className="grid lg:grid-cols-3 gap-12 md:gap-16">
             {[
               {
                 title: "The Creative Agency",
@@ -379,15 +379,16 @@ export default function App() {
               <motion.div 
                 key={i}
                 {...fadeInUp}
-                className="group"
+                className="group text-center md:text-left"
               >
-                <div className="flex items-center gap-3 mb-8">
+                <div className="flex items-center gap-3 mb-6 md:mb-8">
                   <div className="h-px flex-1 bg-white/10" />
-                  <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/30">{item.metric}</span>
+                  <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-[0.3em] text-white/30">{item.metric}</span>
+                  <div className="h-px flex-1 bg-white/10 md:hidden" />
                 </div>
-                <h3 className="text-3xl font-bold mb-6 group-hover:text-brand-accent transition-colors duration-500">{item.title}</h3>
-                <p className="text-white/50 text-lg leading-relaxed font-light mb-8">{item.desc}</p>
-                <div className="flex items-center gap-2 text-sm font-bold text-white/80 group-hover:gap-4 transition-all">
+                <h3 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 group-hover:text-brand-accent transition-colors duration-500">{item.title}</h3>
+                <p className="text-white/60 md:text-white/50 text-base md:text-lg leading-relaxed font-light mb-6 md:mb-8">{item.desc}</p>
+                <div className="flex items-center justify-center md:justify-start gap-2 text-sm font-bold text-white/80 group-hover:gap-4 transition-all">
                   Explore Potential <ArrowUpRight className="w-4 h-4" />
                 </div>
               </motion.div>
@@ -397,30 +398,30 @@ export default function App() {
       </section>
 
       {/* Urgency Section */}
-      <section className="py-32 px-6">
+      <section className="py-16 md:py-32 px-6">
         <motion.div 
           {...fadeInUp}
-          className="max-w-5xl mx-auto glass-card p-16 md:p-24 text-center relative overflow-hidden"
+          className="max-w-5xl mx-auto glass-card p-8 md:p-24 text-center relative overflow-hidden"
         >
           <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-transparent via-brand-accent to-transparent" />
           <div className="absolute -right-20 -top-20 w-64 h-64 bg-brand-accent/10 blur-[100px] rounded-full" />
           
           <div className="relative z-10">
-            <div className="inline-flex items-center gap-2 mb-10 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-bold uppercase tracking-widest text-white/60">
-              <Clock className="w-4 h-4" /> Limited Time Opportunity
+            <div className="inline-flex items-center gap-2 mb-6 md:mb-10 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] md:text-xs font-bold uppercase tracking-widest text-white/60">
+              <Clock className="w-3.5 h-3.5 md:w-4 md:h-4" /> Limited Time Opportunity
             </div>
-            <h2 className="font-display text-5xl md:text-7xl font-bold mb-8 tracking-tighter leading-[0.9]">Opportunities like this <br />don't wait.</h2>
-            <p className="text-2xl text-white/50 mb-12 font-light max-w-2xl mx-auto">
+            <h2 className="font-display text-3xl md:text-7xl font-bold mb-6 md:mb-8 tracking-tighter leading-[1.1] md:leading-[0.9]">Opportunities like this <br className="hidden md:block" />don't wait.</h2>
+            <p className="text-base md:text-2xl text-white/60 md:text-white/50 mb-8 md:mb-12 font-light max-w-2xl mx-auto">
               Webquil.com is a singular asset. Once the acquisition is complete, it will be off the market for years, if not decades.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <button 
                 onClick={() => window.location.href = '#contact'}
-                className="bg-white text-black px-12 py-5 rounded-2xl font-bold text-xl hover:scale-105 transition-all"
+                className="w-full sm:w-auto bg-white text-black px-10 md:px-12 py-5 rounded-2xl font-bold text-lg md:text-xl hover:scale-105 transition-all"
               >
                 Acquire for $695
               </button>
-              <div className="text-white/40 text-sm font-medium">
+              <div className="text-white/40 text-[11px] md:text-sm font-medium">
                 Includes secure transfer & 24/7 support
               </div>
             </div>
@@ -429,29 +430,29 @@ export default function App() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-32 px-6 relative">
+      <section id="contact" className="py-16 md:py-32 px-6 relative">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-24">
+          <div className="grid lg:grid-cols-2 gap-12 md:gap-24">
             <motion.div {...fadeInUp}>
-              <span className="text-brand-accent font-bold tracking-[0.3em] uppercase text-xs mb-6 block">Inquire</span>
-              <h2 className="font-display text-6xl font-bold mb-10 tracking-tighter leading-[0.9]">Let's finalize <br />your brand.</h2>
-              <p className="text-2xl text-white/50 mb-16 font-light leading-relaxed">
+              <span className="text-brand-accent font-bold tracking-[0.3em] uppercase text-[10px] md:text-xs mb-4 md:mb-6 block text-center md:text-left">Inquire</span>
+              <h2 className="font-display text-4xl md:text-6xl font-bold mb-6 md:mb-10 tracking-tighter leading-[1.1] md:leading-[0.9] text-center md:text-left">Let's finalize <br className="hidden md:block" />your brand.</h2>
+              <p className="text-base md:text-2xl text-white/60 md:text-white/50 mb-10 md:mb-16 font-light leading-relaxed text-center md:text-left">
                 We facilitate rapid, secure domain transfers via Escrow.com. Send your offer or inquiry to start the process.
               </p>
               
-              <div className="grid sm:grid-cols-2 gap-12">
+              <div className="grid sm:grid-cols-2 gap-8 md:gap-12 text-center md:text-left">
                 <div className="space-y-2">
-                  <div className="text-[10px] text-white/30 uppercase tracking-[0.3em] font-bold">Direct Line</div>
-                  <div className="text-2xl font-medium">hello@webquil.com</div>
+                  <div className="text-[9px] md:text-[10px] text-white/30 uppercase tracking-[0.3em] font-bold">Direct Line</div>
+                  <div className="text-xl md:text-2xl font-medium">hello@webquil.com</div>
                 </div>
                 <div className="space-y-2">
-                  <div className="text-[10px] text-white/30 uppercase tracking-[0.3em] font-bold">Secure Method</div>
-                  <div className="text-2xl font-medium">Escrow Protected</div>
+                  <div className="text-[9px] md:text-[10px] text-white/30 uppercase tracking-[0.3em] font-bold">Secure Method</div>
+                  <div className="text-xl md:text-2xl font-medium">Escrow Protected</div>
                 </div>
               </div>
             </motion.div>
 
-            <motion.div {...fadeInUp} className="glass-card p-10 md:p-16 relative">
+            <motion.div {...fadeInUp} className="glass-card p-8 md:p-16 relative">
               <div className="absolute inset-0 grid-pattern opacity-5" />
               <AnimatePresence mode="wait">
                 {!isSubmitted ? (
