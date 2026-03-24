@@ -449,31 +449,32 @@ export default function App() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    onSubmit={handleSubmit} 
+                    
+                    action="https://formspree.io/f/xyknrlnb"
+                    method="POST"
                     className="space-y-8 relative z-10"
                   >
+                    <input type="hidden" name="_subject" value="Webquil Domain Offer" />
                     <div className="grid md:grid-cols-2 gap-8">
                       <div className="space-y-3">
                         <label className="text-[10px] font-bold text-white/30 uppercase tracking-[0.2em]">Full Name</label>
                         <input 
+                          name="name"
                           required
                           type="text" 
                           placeholder="Alex Morgan"
                           className="w-full bg-white/5 border border-white/10 rounded-2xl py-5 px-6 focus:outline-none focus:border-brand-accent transition-colors"
-                          value={formData.name}
-                          onChange={(e) => setFormData({...formData, name: e.target.value})}
                         />
                       </div>
                       <div className="space-y-3">
                         <label className="text-[10px] font-bold text-white/30 uppercase tracking-[0.2em]">Email Address</label>
                         <input 
+                          name="email"
                           required
                           type="email" 
                           placeholder="alex@vision.com"
                           className="w-full bg-white/5 border border-white/10 rounded-2xl py-5 px-6 focus:outline-none focus:border-brand-accent transition-colors"
-                          value={formData.email}
-                          onChange={(e) => setFormData({...formData, email: e.target.value})}
-                        />
+                          />
                       </div>
                     </div>
                     <div className="space-y-3">
@@ -481,13 +482,12 @@ export default function App() {
                       <div className="relative">
                         <DollarSign className="absolute left-6 top-1/2 -translate-y-1/2 w-6 h-6 text-white/20" />
                         <input 
+                          name="offer"
                           required
                           type="number" 
                           placeholder="695"
                           className="w-full bg-white/5 border border-white/10 rounded-2xl py-6 pl-16 pr-6 focus:outline-none focus:border-brand-accent transition-colors font-display font-bold text-3xl"
-                          value={formData.offer}
-                          onChange={(e) => setFormData({...formData, offer: e.target.value})}
-                        />
+                          />
                       </div>
                     </div>
                     <button 
