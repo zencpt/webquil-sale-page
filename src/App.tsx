@@ -110,7 +110,9 @@ export default function App() {
               className="font-display text-7xl md:text-9xl font-bold tracking-tighter mb-10 leading-[0.85]"
             >
               Own the Name. <br />
-              <span className="text-gradient">Define the Brand.</span>
+              <span className="text-white md:text-gradient">
+                Define the Brand.
+              </span>
             </motion.h1>
 
             <motion.p 
