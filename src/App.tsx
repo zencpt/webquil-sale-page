@@ -119,16 +119,32 @@ export default function App() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="flex flex-col lg:flex-row items-start lg:items-center gap-10 mb-20"
             >
-              <div className="flex flex-wrap gap-4">
-                <button 
-                  onClick={() => window.location.href = '#contact'}
-                  className="relative group bg-white text-black px-12 py-6 rounded-2xl font-bold text-2xl hover:scale-105 active:scale-95 transition-all flex items-center gap-3 shadow-[0_0_40px_rgba(255,255,255,0.1)] hover:shadow-[0_0_60px_rgba(255,255,255,0.25)]"
-                >
-                  <span className="relative z-10 flex items-center gap-3">
-                    Secure the Domain <ArrowRight className="w-7 h-7 group-hover:translate-x-1 transition-transform" />
-                  </span>
-                  <div className="absolute inset-0 rounded-2xl bg-white blur-xl opacity-0 group-hover:opacity-30 transition-opacity" />
-                </button>
+              <div className="flex flex-wrap gap-8 items-start">
+                <div className="flex flex-col gap-5">
+                  <button 
+                    onClick={() => window.location.href = '#contact'}
+                    className="relative group bg-white text-black px-12 py-6 rounded-2xl font-bold text-2xl hover:scale-105 active:scale-95 transition-all flex items-center gap-3 shadow-[0_0_40px_rgba(255,255,255,0.1)] hover:shadow-[0_0_60px_rgba(255,255,255,0.25)]"
+                  >
+                    <span className="relative z-10 flex items-center gap-3">
+                      Secure the Domain <ArrowRight className="w-7 h-7 group-hover:translate-x-1 transition-transform" />
+                    </span>
+                    <div className="absolute inset-0 rounded-2xl bg-white blur-xl opacity-0 group-hover:opacity-30 transition-opacity" />
+                  </button>
+                  
+                  <div className="flex flex-col gap-2.5 px-2">
+                    {[
+                      "Secure Escrow Transfer",
+                      "Full Ownership Rights",
+                      "One-Time Payment"
+                    ].map((text) => (
+                      <div key={text} className="flex items-center gap-2.5 text-white/40 text-[10px] font-black uppercase tracking-[0.2em]">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-green-500" />
+                        {text}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
                 <button 
                   onClick={() => window.location.href = '#contact'}
                   className="bg-white/5 border border-white/10 px-10 py-6 rounded-2xl font-bold text-xl hover:bg-white/10 transition-all backdrop-blur-md"
@@ -137,30 +153,15 @@ export default function App() {
                 </button>
               </div>
 
-              <div className="flex flex-wrap items-center gap-x-8 gap-y-4">
-                <div className="flex items-center gap-2 text-white/40">
-                  <ShieldCheck className="w-4 h-4 text-brand-accent" />
-                  <span className="text-[10px] font-bold uppercase tracking-widest">Escrow Protected</span>
-                </div>
-                <div className="flex items-center gap-2 text-white/40">
-                  <Zap className="w-4 h-4 text-brand-accent" />
-                  <span className="text-[10px] font-bold uppercase tracking-widest">Instant Transfer</span>
-                </div>
-                <div className="flex items-center gap-2 text-white/40">
-                  <Lock className="w-4 h-4 text-brand-accent" />
-                  <span className="text-[10px] font-bold uppercase tracking-widest">Secure Checkout</span>
-                </div>
-              </div>
-              
               <div className="relative group">
-                <div className="absolute -inset-4 bg-brand-accent/10 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute -inset-8 bg-brand-accent/20 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                 <div className="relative flex flex-col">
-                  <span className="text-[10px] uppercase tracking-[0.4em] text-brand-accent mb-2 font-bold">Acquisition Value</span>
-                  <div className="flex items-center gap-5">
-                    <span className="text-6xl md:text-7xl font-display font-bold text-white tracking-tighter">$695</span>
+                  <span className="text-[10px] uppercase tracking-[0.5em] text-brand-accent mb-3 font-black">Acquisition Value</span>
+                  <div className="flex items-center gap-6">
+                    <span className="text-7xl md:text-9xl font-display font-bold text-white tracking-tighter drop-shadow-[0_0_30px_rgba(255,255,255,0.15)]">$695</span>
                     <div className="flex flex-col -space-y-1">
-                      <span className="text-white/20 text-lg line-through decoration-brand-accent/40">$1,250</span>
-                      <span className="text-[10px] font-black text-green-500 uppercase tracking-widest">Save 45%</span>
+                      <span className="text-white/20 text-xl md:text-2xl line-through decoration-brand-accent/40">$1,250</span>
+                      <span className="text-[11px] font-black text-green-500 uppercase tracking-[0.2em]">Save 45%</span>
                     </div>
                   </div>
                 </div>
@@ -199,14 +200,31 @@ export default function App() {
               ease: "easeInOut"
             }
           }}
-          className="absolute right-[-5%] top-[20%] w-[40%] aspect-square glass-card hidden lg:flex items-center justify-center rotate-3 border-white/5 overflow-visible"
+          className="absolute right-[-5%] top-[20%] w-[40%] aspect-square glass-card hidden lg:flex items-center justify-center rotate-3 border-white/10 overflow-hidden shadow-[0_0_80px_rgba(59,130,246,0.15)]"
           style={{ perspective: "1200px", transformStyle: "preserve-3d" }}
         >
           {/* Subtle Glow Background */}
-          <div className="absolute -inset-20 bg-brand-accent/10 blur-[100px] rounded-full opacity-40 pointer-events-none animate-pulse" />
-          <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent rounded-3xl pointer-events-none" />
+          <div className="absolute -inset-20 bg-brand-accent/10 blur-[120px] rounded-full opacity-40 pointer-events-none animate-pulse" />
           
-          <div className="text-center p-12 relative z-10" style={{ transform: "translateZ(60px)" }}>
+          {/* Moving Sheen / Lighting Effect */}
+          <motion.div
+            animate={{ 
+              translateX: ['-200%', '200%'],
+              translateY: ['-200%', '200%'],
+            }}
+            transition={{ 
+              duration: 8, 
+              repeat: Infinity, 
+              ease: "linear",
+              repeatDelay: 2
+            }}
+            className="absolute inset-0 bg-gradient-to-br from-transparent via-white/10 to-transparent w-[200%] h-[200%] -rotate-45 pointer-events-none"
+          />
+
+          {/* Inner Border Glow */}
+          <div className="absolute inset-0 rounded-3xl border border-white/20 pointer-events-none shadow-[inset_0_0_20px_rgba(255,255,255,0.05)]" />
+          
+          <div className="text-center p-12 relative z-10" style={{ transform: "translateZ(80px)" }}>
             <motion.div 
               animate={{ opacity: [0.05, 0.15, 0.05], scale: [1, 1.05, 1] }}
               transition={{ duration: 5, repeat: Infinity }}
@@ -219,14 +237,14 @@ export default function App() {
               initial={{ width: 0 }}
               animate={{ width: "6rem" }}
               transition={{ duration: 1.2, delay: 1.5, ease: "circOut" }}
-              className="h-px bg-brand-accent mx-auto mb-6 shadow-[0_0_10px_rgba(59,130,246,0.5)]" 
+              className="h-px bg-brand-accent mx-auto mb-6 shadow-[0_0_15px_rgba(59,130,246,0.8)]" 
             />
             <p className="text-white/40 font-serif italic text-2xl">The artisan's digital legacy.</p>
           </div>
 
           {/* Decorative Corner Accents */}
-          <div className="absolute top-8 left-8 w-4 h-4 border-t border-l border-white/20" />
-          <div className="absolute bottom-8 right-8 w-4 h-4 border-b border-r border-white/20" />
+          <div className="absolute top-8 left-8 w-6 h-6 border-t-2 border-l-2 border-white/20 rounded-tl-lg" />
+          <div className="absolute bottom-8 right-8 w-6 h-6 border-b-2 border-r-2 border-white/20 rounded-br-lg" />
         </motion.div>
       </section>
 
