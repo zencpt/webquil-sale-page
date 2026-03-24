@@ -58,7 +58,16 @@ export default function App() {
           <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-2xl shadow-white/20">
             <PenTool className="text-black w-5 h-5" />
           </div>
-          <span className="font-display font-bold text-2xl tracking-tight">Webquil</span>
+          <a 
+  href="#"
+  onClick={(e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }}
+  className="font-display font-bold text-2xl tracking-tight hover:opacity-80 transition-opacity"
+>
+  Webquil
+</a>
         </div>
         <div className="hidden lg:flex gap-10 text-[13px] font-semibold uppercase tracking-[0.2em] text-white/40">
           <a href="#meaning" className="hover:text-white transition-colors">The Vision</a>
