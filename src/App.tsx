@@ -126,7 +126,7 @@ export default function App() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="flex flex-col lg:flex-row items-start lg:items-center gap-6 md:gap-10 mb-12 md:mb-20"
+              className="flex flex-col lg:flex-row items-start lg:items-center gap-6 md:gap-10 mb-4 md:mb-8"
             >
               <div className="flex flex-wrap gap-8 items-start">
                 <div className="flex flex-col gap-5">
