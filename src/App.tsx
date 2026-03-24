@@ -88,7 +88,7 @@ export default function App() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex flex-col justify-center pt-32 pb-24 px-6 overflow-hidden mesh-gradient">
+      <section className="relative min-h-screen flex flex-col justify-start pt-32 pb-24 px-6 overflow-hidden mesh-gradient">
         <div className="absolute inset-0 grid-pattern opacity-20" />
         
         <div className="max-w-7xl mx-auto w-full relative z-10">
